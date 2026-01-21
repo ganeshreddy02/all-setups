@@ -1,0 +1,13 @@
+kops create cluster \
+  --name cluster1.k8s.local \
+  --cloud aws \
+  --zones us-east-2a,us-east-2b,us-east-2c \
+  --control-plane-size c7i-flex.large \
+  --control-plane-volume-size 20 \
+  --node-size t3.micro \
+  --node-volume-size 20 \
+  --node-count 2 \
+  --image ami-0f5fcdfbd140e4ab7
+
+
+kops create cluster --name cluster1.k8s.local --zones=us-east-2a,us-east-2b,us-east-2c --master-size c7i-flex.large --master-volume-size 20 --node-size t3.micro --node-volume-size 20 --node-count 2 --image=ami-0f5fcdfbd140e4ab7
